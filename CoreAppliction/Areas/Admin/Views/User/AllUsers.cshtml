@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CoreAppliction.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "AllUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AllUsers</h1>
+@foreach (var item in Model)
+{
+    <h4>@item.Email</h4>
+}
+

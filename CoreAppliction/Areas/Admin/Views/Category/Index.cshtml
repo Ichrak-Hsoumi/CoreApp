@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CoreAppliction.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
+<h1 style="color:DodgerBlue;">Category List</h1>
+
+<partial name="View"/>
+<table class="table table-striped">
+    <thead>
+        <tr class="active">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <partial name="View1" model="item.Id"/>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
